@@ -7,7 +7,8 @@ if __name__=="__main__":
         file = open(sys.argv[1], "r")
 
         for line in file:
-            x = re.split("\,", line[:-1])
-            print(x)
+            if re.search("GNGGA", line):
+                x = re.split("\,", line[:-1])
+                print(x)
     except e:
         print(e)
